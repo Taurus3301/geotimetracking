@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "218366881154",
+    "project_id": "geotimetrack-d020f",
+    "storage_bucket": "geotimetrack-d020f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218366881154:android:912b1d2a96c3c0dbe9f39b",
+        "android_client_info": {
+          "package_name": "com.example.geotimetracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218366881154-m0r1aekfergs5urf4977kll1htgiak2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHMObktV3Vzil28gsiTfHSVRaARpne4cA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218366881154-m0r1aekfergs5urf4977kll1htgiak2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
