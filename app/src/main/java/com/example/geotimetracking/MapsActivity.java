@@ -1,8 +1,12 @@
 package com.example.geotimetracking;
 
+import androidx.appcompat.app.AppCompatViewInflater;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,6 +20,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+
+    public void onClickBtn(View v){
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +52,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng atlanta = new LatLng(34, 84);
+        mMap.addMarker(new MarkerOptions().position(atlanta).title("Marker in Atlanta"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(atlanta));
     }
+
 }
+
