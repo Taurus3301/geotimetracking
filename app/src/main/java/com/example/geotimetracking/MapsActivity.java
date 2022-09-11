@@ -1,5 +1,7 @@
 package com.example.geotimetracking;
 
+import java.util.Calendar;
+
 import androidx.appcompat.app.AppCompatViewInflater;
 import androidx.fragment.app.FragmentActivity;
 
@@ -7,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,14 +18,24 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.geotimetracking.databinding.ActivityMapsBinding;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+    private EditText text;
+    private FirebaseDatabase database;
+    private DatabaseReference myRef;
+
 
     public void onClickBtn(View v){
-
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("user: " + Calendar.getInstance().getTime());
+        String name = text.getText().toString();
+        myRef.setValue(name);
+        text.setText("");
     }
 
     @Override
@@ -36,6 +49,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        text  = (EditText) findViewById(R.id.editTextTextPersonName);
+
     }
 
     /**

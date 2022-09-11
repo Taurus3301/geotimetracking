@@ -43,6 +43,8 @@
         android:hint="Enter your name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </RelativeLayout>
